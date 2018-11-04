@@ -20,14 +20,20 @@ class LinkedList(object):
     def __init__(self):
         """Initialize a Linked List."""
         self.head = None
+        self._counter = 0
 
     def push(self, val):
         """Add a new Node to the head of the Linked List"""
         new_head = Node(val, self.head)
         self.head = new_head
+        self._counter += 1
 
     def pop(self):
         """Remover the Node at the head of the Linked List and return the value."""
         output = self.head.data
         self.head = self.head.next
         return output
+
+    def size(self):
+        """Return the size of the Linked List."""
+        return self._counter
