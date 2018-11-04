@@ -1,4 +1,8 @@
-"""Linked List: consists of Nodes, each of which contains some data and a pointer to the next node."""
+"""Linked List: consists of Nodes, each of which contains some data and a pointer to the next node.
+
+Attributes: Nodes, LinkedList.
+
+Operations: insert(val), pop(), """
 
 
 class Node(object):
@@ -21,3 +25,9 @@ class LinkedList(object):
         """Add a new Node to the head of the Linked List"""
         new_head = Node(val, self.head)
         self.head = new_head
+
+    def pop(self):
+        """Remover the Node at the head of the Linked List and return the value."""
+        output = self.head.data
+        self.head = self.head.next
+        return output
