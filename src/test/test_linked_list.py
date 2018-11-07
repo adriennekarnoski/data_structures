@@ -60,3 +60,31 @@ def test_pop_method_returns_value_and_updates_counter():
     popped = ll.pop()
     assert popped is 5
     assert ll._counter is 0
+
+
+def test_head_updated_after_pop():
+    """Test head Node is updated after pop() method."""
+    from linked_list import LinkedList
+    ll = LinkedList()
+    ll.push(5)
+    ll.push(10)
+    ll.pop()
+    assert ll.head.data is 5
+
+
+def test_size_method_returns_counter_value():
+    """Test size method returns the value of the counter."""
+    from linked_list import LinkedList
+    ll = LinkedList()
+    ll.push(5)
+    ll.push(10)
+    count = ll.size()
+    assert count is 2
+
+
+def test_empty_linked_list_pop_raises_exception():
+    """Test pop method on empty Linked List raises exception."""
+    from linked_list import LinkedList
+    ll = LinkedList()
+    with pytest.raises(IndexError):
+        ll.pop()

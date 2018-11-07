@@ -30,6 +30,8 @@ class LinkedList(object):
 
     def pop(self):
         """Remover the Node at the head of the Linked List and return the value."""
+        if not self.head:
+            raise IndexError("No Nodes available to pop")
         output = self.head.data
         self.head = self.head.next
         self._counter -= 1
