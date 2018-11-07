@@ -32,6 +32,7 @@ class LinkedList(object):
         """Remover the Node at the head of the Linked List and return the value."""
         output = self.head.data
         self.head = self.head.next
+        self._counter -= 1
         return output
 
     def size(self):
